@@ -160,6 +160,7 @@
             this.chartControl2.Size = new System.Drawing.Size(696, 337);
             this.chartControl2.TabIndex = 1;
             this.chartControl2.SizeChanged += new System.EventHandler(this.DevexpressForm_Load);
+
             this.chartControl2.DoubleClick += new System.EventHandler(this.chartControl2_DoubleClick);
             this.chartControl2.Resize += new System.EventHandler(this.DevexpressForm_Load);
             // 

@@ -36,6 +36,19 @@ namespace Infotech
         }
 
 
+         /* DevexpressForm_Resize funcion below and resize_Control function in it make sure
+         that all charts resize themselves as screen gets bigger or smaller */
+
+        private void DevexpressForm_Resize(object sender, EventArgs e)
+        {
+            resize_Control(chartControl1, recChartControl1);
+            resize_Control(chartControl2, recChartControl2);
+            resize_Control(chartControl3, recChartControl3);
+            resize_Control(textBox1, recTextBox1);
+
+        }
+
+
         private void resize_Control(Control c, Rectangle r)
         {
             float xRatio = (float)(this.Width) / (float)(formOriginalSize.Width);
@@ -50,14 +63,8 @@ namespace Infotech
             c.Size = new Size(newWidth, newHeight);
         }
 
-        private void DevexpressForm_Resize(object sender, EventArgs e)
-        {
-            resize_Control(chartControl1, recChartControl1);
-            resize_Control(chartControl2, recChartControl2);
-            resize_Control(chartControl3, recChartControl3);
-            resize_Control(textBox1, recTextBox1);
+        
 
-        }
         private void DevexpressForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'infotechDatabaseDataSet.Countries' table. You can move, or remove it, as needed.
@@ -66,6 +73,7 @@ namespace Infotech
 
         }
 
+        // when you doubleclick on second chart, it zooms itself, when you doubleclick again it comes back to primary position
         private void chartControl2_DoubleClick(object sender, EventArgs e)
         {
             if (chartControl2IsZoomed == false)
@@ -82,6 +90,6 @@ namespace Infotech
            
         }
 
-        
+       
     }
 }
